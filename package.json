@@ -18,6 +18,7 @@
     "productName": "electron-react-demo",
     "appId": "electron-react-demo",
     "extends": null,
+    "icon": "public/favicon.ico",
     "win": {
       "target": [
         "nsis",
