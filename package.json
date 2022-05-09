@@ -1,0 +1,77 @@
+{
+  "name": "electron-react-demo",
+  "version": "0.1.0",
+  "private": true,
+  "main": "public/electron.js",
+  "author": "Vasantharajan",
+  "description": "Test Electron Project",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.2.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "build": {
+    "productName": "electron-react-demo",
+    "appId": "electron-react-demo",
+    "extends": null,
+    "win": {
+      "target": [
+        "nsis",
+        "msi"
+      ]
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "rpm",
+        "snap",
+        "AppImage"
+      ],
+      "category": "Development"
+    },
+    "directories": {
+      "buildResources": "resources",
+      "output": "release"
+    }
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "dev": "concurrently -k \"cross-env BROWSER=none npm start\" \"npm:electron\"",
+    "electron": "wait-on tcp:3000 && electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^7.1.0",
+    "cross-env": "^7.0.3",
+    "electron": "^18.2.0",
+    "electron-builder": "^23.0.3",
+    "electron-is-dev": "^2.0.0",
+    "wait-on": "^6.0.1"
+  }
+}
